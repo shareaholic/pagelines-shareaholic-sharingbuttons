@@ -114,8 +114,8 @@ class ShrClassicSection extends PageLinesSection {
             'type' => 'select',
             'inputlabel' => 'Select Style',
             'title' => 'Select icon size for bookmarks',
-            'shortexp' => 'Default style is Large.',
-            'exp' => 'Please choose between Small and Large.',
+            'shortexp' => 'Default style is Large icons.',
+            'exp' => 'Please choose between Small and Large icon sizes.',
             'selectvalues' => array(
                 '16' => array('name' => 'Small'),
                 '32' => array('name' => 'Large')

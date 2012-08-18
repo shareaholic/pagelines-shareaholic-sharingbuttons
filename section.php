@@ -52,10 +52,10 @@ class ShrClassicSection extends PageLinesSection {
 
   function section_styles() {
     if ((isset($_GET['sb_debug']) || isset($_POST['sb_debug']))) {
-      $script = 'http://www.spreadaholic.com/media/js/jquery.shareaholic-publishers-rd.js';
+      $script = 'http://www.spreadaholic.com/media/js/jquery.shareaholic-publishers-cb.js';
     }
     else
-      $script = 'https://dtym7iokkjlif.cloudfront.net/media/js/jquery.shareaholic-publishers-rd.min.js';
+      $script = 'https://dtym7iokkjlif.cloudfront.net/media/js/jquery.shareaholic-publishers-cb.min.js';
     
     wp_enqueue_script('shareaholic-recommendations-js', $script);
   }
@@ -70,11 +70,11 @@ class ShrClassicSection extends PageLinesSection {
         'link' => get_permalink(get_the_ID()),
         'apikey' => '8afa39428933be41f8afdb8ea21a495c',
         'number' => '4',
-        'style' => 'image'
+        'size' => $style
     );
     
-    $shrsb_rd_js_params['shr_rd-' . get_the_ID()] = array_filter($params);
-    $js = 'var SHRRD_Settings = ' . json_encode($shrsb_rd_js_params);
+    $shrsb_rd_js_params['shr_cb-' . get_the_ID()] = array_filter($params);
+    $js = 'var SHRCB_Settings = ' . json_encode($shrsb_rd_js_params);
     
     echo '<script type="text/javascript">';
     echo $js;
@@ -84,9 +84,9 @@ class ShrClassicSection extends PageLinesSection {
   function section_template() {
     $post_id =get_the_ID();
     if(!empty($post_id))
-      $class="shr_rd-$post_id";
+      $class="shr_cb-$post_id";
     else
-      $class="shr_rd";
+      $class="shr_cb";
     ?>
     <div class="<?php echo $class?>"></div>
     <?php

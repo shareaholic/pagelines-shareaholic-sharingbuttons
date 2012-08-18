@@ -1,14 +1,14 @@
 <?php
 /*
-  Section: Shareaholic Related Content Widget
+  Section: Shareaholic Social Sharing Buttons
   Author: Shareaholic
   Author URI: http://shareaholic.com
   Version: 1.0.0
-  Description: Increase traffic and time on site for your content with Shareaholic’s related content tool, which recommends your own content at the bottom of each of your posts.
-  Class Name: ShrRecommendationsSection
+  Description: Drive more traffic and engagement to your content with Shareaholic’s social sharing tools, already used by more than 300 million readers each month.
+  Class Name: ShrClassicSection
   Cloning: true
-  External: http://www.shareaholic.com/publishers/recommendations/
-  Demo: http://www.shareaholic.com/publishers/recommendations/
+  External: http://www.shareaholic.com/publishers/sharing/
+  Demo: http://www.shareaholic.com/publishers/sharing/ 
   Workswith: main
  */
 
@@ -48,7 +48,7 @@
  * 	color.less			- Computed color control file (autoloaded)
  *
  */
-class ShrRecommendationsSection extends PageLinesSection {
+class ShrClassicSection extends PageLinesSection {
 
   function section_styles() {
     if ((isset($_GET['sb_debug']) || isset($_POST['sb_debug']))) {
@@ -61,21 +61,16 @@ class ShrRecommendationsSection extends PageLinesSection {
   }
 
   function section_head() {
-    if (!ploption('shr-recomm-style',$this->oset))
-      $style = 'image';
+    if (!ploption('shr-classic-style',$this->oset))
+      $style = '32';
     else
-      $style = ploption('shr-recomm-style',$this->oset);
-
-    if (!ploption('shr-recomm-no',$this->oset))
-      $number_recomm = '3';
-    else
-      $number_recomm = ploption('shr-recomm-no',$this->oset);
+      $style = ploption('shr-classic-style',$this->oset);
     
     $params = array(
         'link' => get_permalink(get_the_ID()),
         'apikey' => '8afa39428933be41f8afdb8ea21a495c',
-        'number' => $number_recomm,
-        'style' => $style
+        'number' => '4',
+        'style' => 'image'
     );
     
     $shrsb_rd_js_params['shr_rd-' . get_the_ID()] = array_filter($params);
@@ -115,29 +110,18 @@ class ShrRecommendationsSection extends PageLinesSection {
           'exp' => 'This is a long explaination' ,
           'shortexp' => 'Short explaination'
           ),* */
-        'shr-recomm-style' => array(
+        'shr-classic-style' => array(
             'type' => 'select',
             'inputlabel' => 'Select Style',
-            'title' => 'Select Style',
-            'shortexp' => 'Default style is Thumbnails.',
-            'exp' => 'Please choose between thumbnail and text styles.',
+            'title' => 'Select icon size for bookmarks',
+            'shortexp' => 'Default style is Large.',
+            'exp' => 'Please choose between Small and Large.',
             'selectvalues' => array(
-                'image' => array('name' => 'Thumbnails'),
-                'text' => array('name' => 'Text')
+                '16' => array('name' => 'Small'),
+                '32' => array('name' => 'Large')
             ),
         ),
-        'shr-recomm-no' => array(
-            'type' => 'select',
-            'inputlabel' => 'Select No. of recommendations to display',
-            'title' => 'Select No. of recommendations to display',
-            'shortexp' => 'Default is 3.',
-            'exp' => 'No. of recommendations to display',
-            'selectvalues' => array(
-                '3' => array('name' => '3'),
-                '4' => array('name' => '4')
-            ),
-        ),
-        'shr-recomm-terms' => array(
+        'shr-classic-terms' => array(
             'type' => 'text_content',
             'inputlabel' => 'By activating Shareaholic you agree to our <a href="http://www.shareaholic.com/terms/" target="_blank"> Terms of Service</a> and <a href="http://www.shareaholic.com/privacy/" target="_blank"> Privacy Policy</a>.',
             'title' => 'Terms & Conditions.',
@@ -146,8 +130,8 @@ class ShrRecommendationsSection extends PageLinesSection {
         )
     );
     $tab_settings = array(
-        'id' => 'shr-recomm-options',
-        'name' => 'Shareaholic Recommendations',
+        'id' => 'shr-classic-options',
+        'name' => 'Shareaholic Classic',
         'icon' => $this->icon,
         'clone_id' => $settings['clone_id'],
         'active' => $settings['active']

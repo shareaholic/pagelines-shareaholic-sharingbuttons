@@ -112,9 +112,9 @@ class ShrClassicSection extends PageLinesSection {
           ),* */
         'shr-classic-style' => array(
             'type' => 'select',
-            'inputlabel' => 'Select Button size:',
-            'title' => 'Choose between small and large social sharing buttons.',
-            'shortexp' => '',
+            'inputlabel' => 'Select Button size:Choose between small and large social sharing buttons.',
+            'title' => 'Select Button size',
+            'shortexp' => 'Choose between small and large social sharing buttons.',
             'exp' => '',
             'selectvalues' => array(
                 '16' => array('name' => 'Small'),

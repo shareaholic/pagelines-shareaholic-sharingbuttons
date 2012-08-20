@@ -4,7 +4,7 @@
   Author: Shareaholic
   Author URI: http://shareaholic.com
   Version: 1.0.0
-  Description: Drive more traffic and engagement to your content with Shareaholic’s social sharing tools, already used by more than 300 million readers each month.
+  Description: Shareaholic is trusted by more than 200,000 websites, reaching 300,000,000 people each month. Shareaholic offers stylish social sharing buttons for the most popular social networks including Facebook, Twitter, LinkedIn and Pinterest.
   Class Name: ShrClassicSection
   Cloning: true
   External: http://www.shareaholic.com/publishers/sharing/
@@ -112,10 +112,10 @@ class ShrClassicSection extends PageLinesSection {
           ),* */
         'shr-classic-style' => array(
             'type' => 'select',
-            'inputlabel' => 'Select Style',
-            'title' => 'Select icon size for bookmarks',
-            'shortexp' => 'Default style is Large icons.',
-            'exp' => 'Please choose between Small and Large icon sizes.',
+            'inputlabel' => 'Select Button size:',
+            'title' => 'Choose between small and large social sharing buttons.',
+            'shortexp' => '',
+            'exp' => '',
             'selectvalues' => array(
                 '16' => array('name' => 'Small'),
                 '32' => array('name' => 'Large')
@@ -124,14 +124,14 @@ class ShrClassicSection extends PageLinesSection {
         'shr-classic-terms' => array(
             'type' => 'text_content',
             'inputlabel' => 'By activating Shareaholic you agree to our <a href="http://www.shareaholic.com/terms/" target="_blank"> Terms of Service</a> and <a href="http://www.shareaholic.com/privacy/" target="_blank"> Privacy Policy</a>.',
-            'title' => 'Terms & Conditions.',
+            'title' => '',
             'shortexp' => '',
             'exp' => '',
         )
     );
     $tab_settings = array(
         'id' => 'shr-classic-options',
-        'name' => 'Shareaholic Classic',
+        'name' => 'Shareaholic Classic Bookmarks',
         'icon' => $this->icon,
         'clone_id' => $settings['clone_id'],
         'active' => $settings['active']

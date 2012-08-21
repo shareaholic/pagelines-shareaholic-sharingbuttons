@@ -5,7 +5,7 @@
   Author URI: http://shareaholic.com
   Version: 1.0.0
   Description: Shareaholic is trusted by more than 200,000 websites, reaching 300,000,000 people each month. Shareaholic offers stylish social sharing buttons for the most popular social networks including Facebook, Twitter, LinkedIn and Pinterest.
-  Class Name: ShrClassicSection
+  Class Name: ShrSharingButtonsSection
   Cloning: true
   External: http://www.shareaholic.com/publishers/sharing/
   Demo: http://www.shareaholic.com/publishers/sharing/ 
@@ -38,17 +38,18 @@
  * 
  * File Naming Conventions
  * -------------------------------------
- *  section.php 		- The primary php loader for the section.
- *  style.css 			- Basic CSS styles contains all structural information, no color (autoloaded)
- *  images/				- Image folder. 
- *  thumb.png			- Primary branding graphic (300px by 225px - autoloaded)
+ *  section.php 		  - The primary php loader for the section.
+ *  style.css 			  - Basic CSS styles contains all structural information, no color (autoloaded)
+ *  images/				    - Image folder. 
+ *  thumb.png			    - Primary branding graphic (300px by 225px - autoloaded)
  *  screenshot.png		- Primary Screenshot (300px by 225px)
  *  screenshot-1.png 	- Additional screenshots: (screenshot-1.png -2 -3 etc...optional).
- *  icon.png			- Portable icon format (16px by 16px)
- * 	color.less			- Computed color control file (autoloaded)
+ *  icon.png			    - Portable icon format (16px by 16px)
+ * 	color.less			  - Computed color control file (autoloaded)
  *
  */
-class ShrClassicSection extends PageLinesSection {
+ 
+class ShrSharingButtonsSection extends PageLinesSection {
 
   function section_styles() {
     if ((isset($_GET['sb_debug']) || isset($_POST['sb_debug']))) {
@@ -95,21 +96,8 @@ class ShrClassicSection extends PageLinesSection {
   function section_optionator($settings) {
 
     $settings = wp_parse_args($settings, $this->optionator_default);
+    
     $options = array(
-        /**  'fittext-text' => array(
-          'title' => 'FitText Text',
-          'type' => 'text',
-          'inputlabel' => 'Add Text',
-          'exp' => 'This is a long explaination' ,
-          'shortexp' => 'Short explaination'
-          ),
-          'fittext-font' => array(
-          'title' => 'FitText Font',
-          'type' => 'fonts',
-          'inputlabel' => 'Add Font',
-          'exp' => 'This is a long explaination' ,
-          'shortexp' => 'Short explaination'
-          ),* */
         'shr-classic-style' => array(
             'type' => 'select',
             'inputlabel' => 'Select Button Size: Choose between large and small social sharing buttons',
@@ -129,6 +117,7 @@ class ShrClassicSection extends PageLinesSection {
             'exp' => '',
         )
     );
+    
     $tab_settings = array(
         'id' => 'shr-classic-options',
         'name' => 'Shareaholic Classic Bookmarks',
@@ -138,6 +127,4 @@ class ShrClassicSection extends PageLinesSection {
     );
     register_metatab($tab_settings, $options, $this->class_name);
   }
-
 }
-

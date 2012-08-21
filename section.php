@@ -69,7 +69,7 @@ class ShrSharingButtonsSection extends PageLinesSection {
     
     $params = array(
         'link' => get_permalink(get_the_ID()),
-        'apikey' => '8afa39428933be41f8afdb8ea21a495c',
+        'apikey' => 'ec480e025f2f0e86f41ebad0b2940ff1b',
         'number' => '4',
         'size' => $style
     );
@@ -111,7 +111,7 @@ class ShrSharingButtonsSection extends PageLinesSection {
         ),
         'shr-classic-terms' => array(
             'type' => 'text_content',
-            'inputlabel' => 'By activating Shareaholic you agree to our <a href="http://www.shareaholic.com/terms/" target="_blank"> Terms of Service</a> and <a href="http://www.shareaholic.com/privacy/" target="_blank"> Privacy Policy</a>.',
+            'inputlabel' => 'By activating Shareaholic you agree to our <a href="http://www.shareaholic.com/terms/" target="_blank">Terms of Service</a> and <a href="http://www.shareaholic.com/privacy/" target="_blank">Privacy Policy</a>.',
             'title' => '',
             'shortexp' => '',
             'exp' => '',

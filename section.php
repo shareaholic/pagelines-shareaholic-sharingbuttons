@@ -3,11 +3,10 @@
   Section: Shareaholic Social Sharing Buttons
   Author: Shareaholic
   Author URI: http://shareaholic.com
-  Version: 1.0.0
-  Description: Shareaholic is trusted by more than 200,000 websites, reaching 300,000,000 people each month. Shareaholic offers stylish social sharing buttons for the most popular social networks including Facebook, Twitter, LinkedIn and Pinterest.
+  Version: 1.0.1
+  Description: Shareaholic offers stylish social sharing buttons for the most popular social networks including Facebook, Twitter, LinkedIn and Pinterest. Shareaholic is trusted by hundreds of thousands of websites and touches over 300 million people each month.
   Class Name: ShrSharingButtonsSection
   Cloning: true
-  External: http://www.shareaholic.com/publishers/sharing/
   Demo: http://www.shareaholic.com/publishers/sharing/ 
   Workswith: main
  */
